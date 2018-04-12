@@ -1,0 +1,9 @@
+F:\MyProject\User.API\Resilience\bin\Debug\netcoreapp2.0\Resilience.deps.json
+F:\MyProject\User.API\Resilience\bin\Debug\netcoreapp2.0\Resilience.dll
+F:\MyProject\User.API\Resilience\bin\Debug\netcoreapp2.0\Resilience.pdb
+F:\MyProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.csprojResolveAssemblyReference.cache
+F:\MyProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.csproj.CoreCompileInputs.cache
+F:\MyProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.AssemblyInfoInputs.cache
+F:\MyProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.AssemblyInfo.cs
+F:\MyProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.dll
+F:\MyProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.pdb

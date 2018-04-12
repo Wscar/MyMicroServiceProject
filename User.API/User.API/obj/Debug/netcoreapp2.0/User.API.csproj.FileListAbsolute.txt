@@ -1,0 +1,12 @@
+F:\MyProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.deps.json
+F:\MyProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.runtimeconfig.json
+F:\MyProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.runtimeconfig.dev.json
+F:\MyProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.dll
+F:\MyProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.pdb
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.csprojResolveAssemblyReference.cache
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.csproj.CoreCompileInputs.cache
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.AssemblyInfoInputs.cache
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.AssemblyInfo.cs
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.dll
+F:\MyProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.pdb

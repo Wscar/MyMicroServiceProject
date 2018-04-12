@@ -1,0 +1,7 @@
+F:\MyProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\API.Gateway.deps.json
+F:\MyProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\API.Gateway.runtimeconfig.json
+F:\MyProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\API.Gateway.runtimeconfig.dev.json
+F:\MyProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\API.Gateway.dll
+F:\MyProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\API.Gateway.csproj.CoreCompileInputs.cache
+F:\MyProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\API.Gateway.AssemblyInfoInputs.cache
+F:\MyProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\API.Gateway.AssemblyInfo.cs

@@ -1,0 +1,17 @@
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\UserTest.deps.json
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\UserTest.runtimeconfig.json
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\UserTest.runtimeconfig.dev.json
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\UserTest.dll
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\UserTest.pdb
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\User.API.dll
+F:\MyProject\User.API\UserTest\bin\Debug\netcoreapp2.0\User.API.pdb
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.csprojResolveAssemblyReference.cache
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.csproj.CoreCompileInputs.cache
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.AssemblyInfoInputs.cache
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.AssemblyInfo.cs
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.csproj.CopyComplete
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.dll
+F:\MyProject\User.API\UserTest\obj\Debug\netcoreapp2.0\UserTest.pdb

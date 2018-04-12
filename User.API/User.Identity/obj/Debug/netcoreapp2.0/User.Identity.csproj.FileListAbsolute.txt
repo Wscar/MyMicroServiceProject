@@ -1,0 +1,15 @@
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\User.Identity.deps.json
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\User.Identity.runtimeconfig.json
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\User.Identity.runtimeconfig.dev.json
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\User.Identity.dll
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\User.Identity.pdb
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\Resilience.dll
+F:\MyProject\User.API\User.Identity\bin\Debug\netcoreapp2.0\Resilience.pdb
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.csprojResolveAssemblyReference.cache
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.csproj.CoreCompileInputs.cache
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.AssemblyInfoInputs.cache
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.AssemblyInfo.cs
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.csproj.CopyComplete
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.dll
+F:\MyProject\User.API\User.Identity\obj\Debug\netcoreapp2.0\User.Identity.pdb
