@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using System.Collections;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Net.Http;
+using User.API.Models;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace User.API.Controllers
@@ -46,38 +47,16 @@ namespace User.API.Controllers
         public async Task<IActionResult> Pacth([FromBody]JsonPatchDocument<Models.APPUser> patch)
         {
             var users =  await userContext.Users.SingleOrDefaultAsync(x => x.Id == UserIdentity.UserId);
-          
-            //foreach (var prop in users.UserProperties)
-            //{  
-            //    userContext.Entry(prop).State = EntityState.Detached;   //不跟踪
-            //}
-            patch.ApplyTo(users);        
-            //原先有的userProperties信息
-            //AsNoTracking()不进行自动映射
-            var originProperties = await userContext.UserProperties.AsNoTracking().Where(x => x.APPUserId == UserIdentity.UserId).AsNoTracking().ToListAsync();
-            //做并集 
-            var allProperties = originProperties.Union(users.UserProperties,new Models.UserPropertiesComparer()).Distinct();
-            //用原来的userProperties与新来的uersProperties求差集，找出要移除的元素
-            var removedProperties = originProperties.Except(users.UserProperties, new Models.UserPropertiesComparer());
-            //用并集与原有的userProperties求差集，找出新来的元素.
-            var newProperties = allProperties.Except(originProperties, new Models.UserPropertiesComparer());                                
-            foreach(var prop in removedProperties)
-            {
-                userContext.UserProperties.Remove(prop);
-            }
-            //删除原来的UserProperties
-            var deleteUserProperties = originProperties;
-            foreach (var prop in deleteUserProperties)
-            {
-                deleteUserProperties.Remove(prop);
-            }
-            foreach (var prop in newProperties)
-            {
-                userContext.UserProperties.Add(prop);
-            }
-            userContext.Users.Update(users);
+                   
+            patch.ApplyTo(users);
+            //删除原来的userProperties信息
+            var userProperties = userContext.UserProperties.Where(x => x.APPUserId == users.Id).ToList();
+            userContext.UserProperties.RemoveRange(userProperties);
+            var newUser = users;
+            userContext.Users. Update(newUser);           
             userContext.SaveChanges();
-            return Json(users);
+            var userInfo = await userContext.Users.AsNoTracking().Include(x=>x.UserProperties).SingleOrDefaultAsync(x => x.Id == UserIdentity.UserId);
+            return Json(userInfo);
         }
         [Route("check-or-create")]
         [HttpPost]
@@ -101,6 +80,53 @@ namespace User.API.Controllers
               user=  userContext.Users.Where(x => x.Phone == phone).FirstOrDefault();
             }
             return Ok(user.Id);
+        }
+        [HttpGet]
+        [Route("tags")]
+        /// <summary>
+        /// 获取用户标签选项数据
+        /// </summary>
+        /// <returns></returns>
+        public  async Task<IActionResult > GetUserTags()
+        {
+            return   Ok( await userContext.UserTag.Where(x => x.UserId == UserIdentity.UserId).ToListAsync());
+        }
+        [HttpPost]
+        [Route("serach")]
+        /// <summary>
+        /// 根据手机查找搜索用户
+        /// </summary>
+        /// <param name="phone">手机号</param>
+        /// <returns></returns>
+        public async Task<IActionResult> Search(string phone)
+        {
+            return Ok( await userContext.Users.Include(x => x.UserProperties).SingleOrDefaultAsync(x => x.Phone == phone));
+        }
+        [HttpPut]
+        [Route("update-user-tags")]
+        /// <summary>
+        /// 更新用户标签
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> UpdateUserTags ([FromBody] List<string> Tags)
+        {
+            //删除当前用户的标签，
+            var userId = UserIdentity.UserId;
+            var userTags=  await userContext.UserTag.Where(x => x.UserId == userId).ToListAsync();
+            if (userTags != null || userTags.Count != 0)
+            {
+                userContext.UserTag.RemoveRange(userTags);
+                await userContext.SaveChangesAsync();
+            }
+            List<UserTag> newUserTags = new List<UserTag>();
+            Tags.ForEach((x) =>
+            {
+                var userTag = new UserTag { UserId = userId, Tag = x, CreateTime =Convert.ToDateTime( DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) };
+                newUserTags.Add(userTag);
+            });
+            userContext.UserTag.AddRange(newUserTags);
+            await userContext.SaveChangesAsync();
+            return Ok(newUserTags);
         }
         // GET api/<controller>/5
         [HttpGet("{id}")]

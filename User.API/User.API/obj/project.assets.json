@@ -13461,11 +13461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MyProject\\User.API\\User.API\\User.API.csproj",
+      "projectUniqueName": "F:\\MyProject\\MyMicroServiceProject\\User.API\\User.API\\User.API.csproj",
       "projectName": "User.API",
-      "projectPath": "F:\\MyProject\\User.API\\User.API\\User.API.csproj",
+      "projectPath": "F:\\MyProject\\MyMicroServiceProject\\User.API\\User.API\\User.API.csproj",
       "packagesPath": "C:\\Users\\夜莫白\\.nuget\\packages\\",
-      "outputPath": "F:\\MyProject\\User.API\\User.API\\obj\\",
+      "outputPath": "F:\\MyProject\\MyMicroServiceProject\\User.API\\User.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

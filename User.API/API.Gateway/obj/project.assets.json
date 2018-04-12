@@ -13234,11 +13234,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MyProject\\User.API\\API.Gateway\\Gateway.API.csproj",
+      "projectUniqueName": "F:\\MyProject\\MyMicroServiceProject\\User.API\\API.Gateway\\Gateway.API.csproj",
       "projectName": "Gateway.API",
-      "projectPath": "F:\\MyProject\\User.API\\API.Gateway\\Gateway.API.csproj",
+      "projectPath": "F:\\MyProject\\MyMicroServiceProject\\User.API\\API.Gateway\\Gateway.API.csproj",
       "packagesPath": "C:\\Users\\夜莫白\\.nuget\\packages\\",
-      "outputPath": "F:\\MyProject\\User.API\\API.Gateway\\obj\\",
+      "outputPath": "F:\\MyProject\\MyMicroServiceProject\\User.API\\API.Gateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

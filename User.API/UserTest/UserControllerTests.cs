@@ -28,6 +28,7 @@ namespace UserTest
                 Id = 1,
                 Name = "夜莫白"
             });
+            userContext.UserTag.Add(new UserTag() { UserId = 1, Tag = "大神", CreateTime = DateTime.Now });
             userContext.SaveChanges();
             return userContext;
         }
@@ -119,6 +120,29 @@ namespace UserTest
             //数据库验证
             var userModel = await context.Users.SingleOrDefaultAsync(x => x.Id == 1);
             userModel.UserProperties.Should().BeEmpty();
+        }
+        [Fact]
+        public async void Get_ReturnRightUserTags_WithExpectedParamerters()
+        {
+            (UserController controller, UserContext context) = GetUserController();
+             var response=  await controller.GetUserTags();
+            //进行返回值验证
+            var result = response.Should().BeOfType<OkObjectResult>().Subject;
+            var userTags = result.Value.Should().BeAssignableTo<List<UserTag>>().Subject;
+            userTags[0].UserId.Should().Be(1);
+            userTags[0].Tag.Should().Be("大神");
+
+        }
+        [Fact] async void Update_ReturnUserTags_WithExpectedParamerters()
+        {
+            (UserController controller, UserContext context) = GetUserController();
+            List<string> newUserTags = new List<string>() {"大神","WarFace" };
+            var response =await controller.UpdateUserTags(newUserTags);
+            var result = response.Should().BeOfType<OkObjectResult>().Subject;
+            var userTags = result.Value.Should().BeAssignableTo<List<UserTag>>().Subject;
+            //看看usertags的数量是否是2
+            userTags.Count.Should().Be(2);
+            userTags[1].Tag.Should().Be("WarFace");
         }
     }
 }
