@@ -1,0 +1,11 @@
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Conract.API.deps.json
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Conract.API.runtimeconfig.json
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Conract.API.runtimeconfig.dev.json
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Conract.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Conract.API.csprojResolveAssemblyReference.cache
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Conract.API.csproj.CoreCompileInputs.cache
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Conract.API.AssemblyInfoInputs.cache
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Conract.API.AssemblyInfo.cs
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Conract.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Conract.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Conract.API.pdb
