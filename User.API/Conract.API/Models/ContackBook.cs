@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 namespace Contact.API.Models
 {
     public class ContackBook
-    {
+    {  
+        public ContackBook()
+        {
+            this.Contacts = new List<Contact>();
+        }
         public int UserId { get; set; }
 
         /// <summary>

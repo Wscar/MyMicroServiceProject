@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 namespace Contact.API.Models
 {
     public class Contact
-    {   
+    {   public Contact()
+        {
+            Tasg = new List<string>();
+        }
         /// <summary>
         /// 用户ID
         /// </summary>

@@ -42,6 +42,6 @@ namespace Contact.API.Models
         /// </summary>
         public string Approvalid { get; set; }
         public DateTime HandleTime { get; set; }
-        public DateTime CreateTime { get; set; }
+        public DateTime ApplyTime { get; set; }
     }
 }
