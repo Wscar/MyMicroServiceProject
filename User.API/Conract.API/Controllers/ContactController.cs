@@ -8,7 +8,7 @@ using Contact.API.Models;
 using Contact.API.Data;
 using Contact.API.Service;
 using System.Threading;
-
+using Contact.API.ViewModels;
 namespace Contact.API.Controllers
 {
     [Produces("application/json")]
@@ -23,6 +23,25 @@ namespace Contact.API.Controllers
             requestRespository = _requestRespository;
             userService = _userService;
             contaclRepository = _contaclRepository;
+        }
+        [HttpGet]
+        [Route("")]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(  await contaclRepository.GetContactsAsync(UserIdentity.UserId));
+        }
+        [HttpPut]
+        [Route("add-tags")]
+        public async Task<IActionResult> AddTagsContact([FromBody] TagContactInputViewModel tags)
+        {
+            var result= await contaclRepository.TagsContactAsync(UserIdentity.UserId, tags.ContactId,tags.Tags);
+            if(result)
+            {
+                return Ok(result);
+            }
+            //LOG TBD
+
+            return BadRequest();
         }
         [HttpGet]
         [Route("apply-requsets")]

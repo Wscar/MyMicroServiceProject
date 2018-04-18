@@ -38,6 +38,27 @@ namespace Contact.API.Data
 
         }
 
+        public async Task<List<Models.Contact>> GetContactsAsync(int userid)
+        {
+            var contactBook = (await contactContext.ContactBooks.FindAsync(x => x.UserId == userid)).FirstOrDefault();
+            if (contactBook != null)
+            {
+                return contactBook.Contacts;
+            }
+            // log tbd
+            return new List<Models.Contact>();
+        }
+
+        public async Task<bool> TagsContactAsync(int userId, int contactId, List<string> tags)
+        {
+            var filter = Builders<ContackBook>.Filter.And(Builders<ContackBook>.Filter.Eq(x => x.UserId, userId),
+                Builders<ContackBook>.Filter.Eq("Contacts.UserId", contactId)
+                );
+            var update = Builders<ContackBook>.Update.Set("Contacts.$.Tasg", tags);
+            var result = await contactContext.ContactBooks.UpdateOneAsync(filter, update);
+            return result.MatchedCount == result.ModifiedCount&&result.ModifiedCount == 1;   
+        }
+
         /// <summary>
         /// 更新用户好友信息
         /// </summary>
