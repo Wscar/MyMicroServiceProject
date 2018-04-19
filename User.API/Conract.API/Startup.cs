@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Contact.API.Data;
+using Contact.API.Service;
+
 namespace Contact.API
 {
     public class Startup
@@ -24,6 +26,8 @@ namespace Contact.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<AppSetting>(Configuration.GetSection("DBSetting"));
+            services.AddScoped<IContactApplyRequestRespository, MysqlContactApplyRequestRepository>();
+            services.AddScoped<IUserService, UserService>();
             services.AddMvc();
         }
 

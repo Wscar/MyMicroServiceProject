@@ -5,11 +5,20 @@ using System.Threading;
 using System.Threading.Tasks;
 using Contact.API.Dtos;
 using Contact.API.Models;
-
+using Dapper;
+using Microsoft.Extensions.Options;
+using MySql.Data.MySqlClient;
 namespace Contact.API.Data
 {
     public class MysqlContactRepository : IContaclRepository
-    {    
+    {
+
+        private readonly MySqlConnection conn;
+
+        public MysqlContactRepository(IOptions<AppSetting> options)
+        {
+            conn = new MySqlConnection(options.Value.MySqlConnectionString);
+        }
         /// <summary>
         /// 添加用户好友信息
         /// </summary>
@@ -17,9 +26,11 @@ namespace Contact.API.Data
         /// <param name="baseUserInfo"></param>
         /// <param name="token"></param>
         /// <returns></returns>
-        public Task<bool> AddContactAsync(int userId, BaseUserInfo baseUserInfo, CancellationToken token)
+        public async Task<bool> AddContactAsync(int userId, BaseUserInfo baseUserInfo, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var sql = "intser into Contact values(@UserId,@ContactId,@Each)";
+            var result= await  conn.ExecuteAsync(sql, new { UserId = userId, ContactId = baseUserInfo.UserId });
+            return result > 0;
         }
 
         /// <summary>
@@ -27,9 +38,11 @@ namespace Contact.API.Data
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
-        public Task<List<Models.Contact>> GetContactsAsync(int userid)
+        public async Task<List<Models.Contact>> GetContactsAsync(int userid)
         {
-            throw new NotImplementedException();
+            var sql = "select a.id userid from beat_user.Contact a where a.id=@UserId ";
+            var contacts=  await  conn.QueryAsync<Models.Contact>(sql, new { UserId = userid });
+            return contacts.ToList();
         }
 
         /// <summary>
@@ -39,9 +52,16 @@ namespace Contact.API.Data
         /// <param name="contactId"></param>
         /// <param name="tags"></param>
         /// <returns></returns>
-        public Task<bool> TagsContactAsync(int userId, int contactId, List<string> tags)
+        public async Task<bool> TagsContactAsync(int userId, int contactId, List<string> tags)
         {
-            throw new NotImplementedException();
+            var sql = "update beta.Contact  set tasg=@Tags where userId=@UserId and contactId=@ContactId";
+            var contactTags = "";
+            tags.ForEach((x) =>
+            {
+                contactTags += x + ",";
+            });
+            var result= await conn.ExecuteAsync(sql, new { UserId = userId, ContactId = contactId, Tags = contactTags });
+            return result > 0;
         }
 
         /// <summary>

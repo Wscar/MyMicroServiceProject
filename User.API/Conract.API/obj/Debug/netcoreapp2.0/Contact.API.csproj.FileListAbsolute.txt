@@ -3,9 +3,9 @@ F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Contact.API.runtimeconfig.dev.json
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Contact.API.dll
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\bin\Debug\netcoreapp2.0\Contact.API.pdb
-F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.csprojResolveAssemblyReference.cache
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.csproj.CoreCompileInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.AssemblyInfoInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.AssemblyInfo.cs
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.dll
 F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Conract.API\obj\Debug\netcoreapp2.0\Contact.API.csprojResolveAssemblyReference.cache

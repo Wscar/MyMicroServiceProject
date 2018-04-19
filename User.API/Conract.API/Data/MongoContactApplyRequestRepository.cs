@@ -43,7 +43,7 @@ namespace Contact.API.Data
         public async Task<bool> ApprovalAsync(int userId, int applierId, CancellationToken cancellationToken)
         {
             var filter = Builders<ContactApllyRequest>.Filter.Where(x => x.UserId == userId && x.Applierid == applierId);
-            var updateFilter = Builders<ContactApllyRequest>.Update.Set(x => x.Approvalid, "1")
+            var updateFilter = Builders<ContactApllyRequest>.Update.Set(x => x.Approval, "1")
                 .Set(x => x.HandleTime, DateTime.Now);
                
             var result = await contactContext.ContactApplyRequests.UpdateOneAsync(filter, updateFilter, null, cancellationToken);

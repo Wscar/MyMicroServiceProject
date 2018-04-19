@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Contact.API.Models
-{   
+{
     /// <summary>
     /// 好友申请
     /// </summary>
     public class ContactApllyRequest
-    {  
-      
+    {
+
         /// <summary>
         /// 用户ID
         /// </summary>
@@ -36,11 +36,11 @@ namespace Contact.API.Models
         /// <summary>
         /// 申请人ID
         /// </summary>
-        public  int Applierid { get; set; }
+        public int Applierid { get; set; }
         /// <summary>
         /// 0 申请通过，1申请为通过
         /// </summary>
-        public string Approvalid { get; set; }
+        public string Approval { get; set; }
         public DateTime HandleTime { get; set; }
         public DateTime ApplyTime { get; set; }
     }

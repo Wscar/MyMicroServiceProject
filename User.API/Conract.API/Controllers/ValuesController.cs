@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Contact.API.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -11,9 +12,11 @@ namespace Contact.API.Controllers
     public class ValuesController : Controller
     {
         private readonly AppSetting appSetting;
-        public ValuesController(IOptionsSnapshot<AppSetting> _appSetting)
+        private readonly IUserService userService;
+        public ValuesController(IOptions<AppSetting> _appSetting, IUserService _userService)
         {
             appSetting = _appSetting.Value;
+            userService = _userService;
         }
         // GET api/values
         [HttpGet]
@@ -24,9 +27,15 @@ namespace Contact.API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        [Route("get-userInfo")]
+        public async  Task<IActionResult> GetUserInfo(int id)
         {
-            return "value";
+            var result=await userService.GetBaseUserInfoAsync(id);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
         }
 
         // POST api/values
