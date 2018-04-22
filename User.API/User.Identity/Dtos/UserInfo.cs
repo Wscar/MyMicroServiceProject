@@ -3,39 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Contact.API.Models
+namespace User.Identity.Dtos
 {
-    public class Contact
-    {   public Contact()
-        {
-            Tags = new List<string>();
-        }
+    public class UserInfo
+    {
         /// <summary>
         /// 用户ID
         /// </summary>
-        public  int UserId { get; set; }
+        public int Id { get; set; }
         /// <summary>
-        /// 用户昵称
+        /// y用户名
         /// </summary>
-        public  string Name { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 用户公司
         /// </summary>
-        public  string Company { get; set; }
-
+        public string Company { get; set; }
         /// <summary>
         /// 用户职位
         /// </summary>
         public string Title { get; set; }
-
         /// <summary>
         /// 用户头像
         /// </summary>
         public string Avatar { get; set; }
-
-        /// <summary>
-        /// 用户标签  
-        /// </summary>
-        public List<String > Tags { get; set; }
     }
 }

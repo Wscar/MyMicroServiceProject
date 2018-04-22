@@ -8,7 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-
+using User.Identity.Dtos;
+using Newtonsoft.Json;
 namespace User.Identity.Service
 {
     public class UserService : IUserServices
@@ -26,7 +27,7 @@ namespace User.Identity.Service
             //var port = address.First().Port;
             //UserServiceUrl = $"http://{host}:{port}";
         }
-        public async Task<int> CheckOrCreate(string phone)
+        public async Task<UserInfo> CheckOrCreate(string phone)
         {
             try
             {
@@ -36,9 +37,9 @@ namespace User.Identity.Service
                 var response = await httpClient.PostAsync(UserServiceUrl + "/api/users/check-or-create",form);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    var userId = await response.Content.ReadAsStringAsync();
-                    int.TryParse(userId, out int intUserId);
-                    return intUserId;
+                    var result = await response.Content.ReadAsStringAsync();
+                    var userInfo = JsonConvert.DeserializeObject<UserInfo>(result);
+                    return userInfo;
                 }
             }
             catch (Exception ex)
@@ -47,7 +48,7 @@ namespace User.Identity.Service
             }
            
             
-            return 0;
+            return null;
         }
         private void GetServiceUrl(IOptions<Dtos.ServiceDiscoveryOptions> options)
         {

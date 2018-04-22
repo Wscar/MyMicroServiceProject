@@ -22,9 +22,10 @@ namespace User.Identity
                 //AllowedGrantTypes=
                 AllowedGrantTypes = new List<string> { "sms_auth_code" },
                 //会直接返回所有的claims的信息
-                AlwaysIncludeUserClaimsInIdToken = true,
+                AlwaysIncludeUserClaimsInIdToken = true,            
                 AllowedScopes = new List<string>  {
                     "gateway_api",
+                     "user_api",
                     IdentityServer4.IdentityServerConstants.StandardScopes.Profile,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OfflineAccess
@@ -56,8 +57,9 @@ namespace User.Identity
         {
             return new List<ApiResource>
             {
-                new ApiResource("gateway_api","user api service")
+                new ApiResource("gateway_api","gateway service"),
 
+                new ApiResource("user_api","user_api service")
             };
         }
         public static List<TestUser> GetTestUser()

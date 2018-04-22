@@ -22,6 +22,7 @@ namespace User.Identity.Authentication
         public async Task ValidateAsync(ExtensionGrantValidationContext context)
         {
             var phone = context.Request.Raw["phone"];
+           var code=  context.Request.AuthorizationCode;
             var auth_code = context.Request.Raw["auth_code"];
             var errorValidationResult = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
             if (string.IsNullOrWhiteSpace(phone) || string.IsNullOrWhiteSpace(auth_code))
@@ -36,15 +37,21 @@ namespace User.Identity.Authentication
                 return;
             }
             //验证用户
-            var userId = await userServices.CheckOrCreate(phone);
-            if (userId<=0)
+            var userInfo = await userServices.CheckOrCreate(phone);
+            if (userInfo==null)
             {
                 context.Result = errorValidationResult;
                 return;
             }
             //返回正确的结果
-           
-            context.Result = new GrantValidationResult(userId.ToString(), GrantType);
+            var claims = new Claim[]{
+                new Claim("Name",userInfo.Name??string.Empty),
+                new Claim("Company",userInfo.Company),
+                new Claim("Title",userInfo.Title),
+                new Claim("Avatr",userInfo.Avatar)
+            };
+         
+            context.Result = new GrantValidationResult(userInfo.Id.ToString(), GrantType,claims );
         }
     }
 }

@@ -27,9 +27,73 @@
       ],
       "UpstreamPathTemplate": "/connect/token",
       "UpstreamHttpMethod": [ "Post" ]
-     
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/contact",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 62077
+        }
+      ],
+      "UpstreamPathTemplate": "/contact",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/contact/add-tags",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 62077
+        }
+      ],
+      "UpstreamPathTemplate": "/contact/add-tags",
+      "UpstreamHttpMethod": [ "Put" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/contact/apply-requsets",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 62077
+        }
+      ],
+      "UpstreamPathTemplate": "/contact/apply-requsets",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/contact/add-request",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 62077
+        }
+      ],
+      "UpstreamPathTemplate": "/contact/add-request",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/contact/approval-request",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 62077
+        }
+      ],
+      "UpstreamPathTemplate": "/contact/approval-request",
+      "UpstreamHttpMethod": [ "Put" ]
     }
   ],
+ 
+
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost"
   }

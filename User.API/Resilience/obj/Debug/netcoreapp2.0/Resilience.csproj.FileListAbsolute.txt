@@ -15,4 +15,3 @@ F:\MyProject\MyMicroServiceProject\User.API\Resilience\obj\Debug\netcoreapp2.0\R
 F:\MyProject\MyMicroServiceProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.AssemblyInfo.cs
 F:\MyProject\MyMicroServiceProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.dll
 F:\MyProject\MyMicroServiceProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.pdb
-F:\MyProject\MyMicroServiceProject\User.API\Resilience\obj\Debug\netcoreapp2.0\Resilience.csprojResolveAssemblyReference.cache

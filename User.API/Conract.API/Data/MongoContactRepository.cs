@@ -31,7 +31,7 @@ namespace Contact.API.Data
                     Avatar = baseUserInfo.Avatar,
                     Company=baseUserInfo.Company,
                     Name=baseUserInfo.Name,
-                    Ttile=baseUserInfo.Title
+                    Title=baseUserInfo.Title
                 });
             var result = await contactContext.ContactBooks.UpdateOneAsync(filter, updateFilter, null, token);
             return result.MatchedCount == result.ModifiedCount&&result.ModifiedCount==1;

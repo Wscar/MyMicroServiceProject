@@ -27,6 +27,7 @@ namespace Contact.API
         {
             services.Configure<AppSetting>(Configuration.GetSection("DBSetting"));
             services.AddScoped<IContactApplyRequestRespository, MysqlContactApplyRequestRepository>();
+            services.AddScoped<IContaclRepository, MysqlContactRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddMvc();
         }

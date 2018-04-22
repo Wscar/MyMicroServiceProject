@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Contact.API.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-
+using MySql.Data.MySqlClient;
+using Dapper;
 namespace Contact.API.Controllers
 {
     [Route("api/[controller]")]
@@ -37,7 +38,24 @@ namespace Contact.API.Controllers
             }
             return BadRequest();
         }
-
+        [HttpGet("{id}")]
+        [Route("get-contact")]
+        public IActionResult GetContact(int id)
+        {
+            MySqlConnection conn = new MySqlConnection(appSetting.MySqlConnectionString);
+            var sql = "select a.contactid userid, b.Name name, b.Company,b.title,b.Avatar " +
+               "from beta_user.Contact a," +
+               "beta_user.Users b where a.userid = @UserId" +
+               " and  b.id = a.contactId";
+           
+        
+            var contacts = conn.Query<Models.Contact>(sql, new { UserId =1 });
+            if (contacts != null)
+            {
+                return Ok(contacts);
+            }
+            return BadRequest();
+        }
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)

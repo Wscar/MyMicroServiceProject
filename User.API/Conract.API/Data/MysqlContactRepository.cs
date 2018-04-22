@@ -40,9 +40,16 @@ namespace Contact.API.Data
         /// <returns></returns>
         public async Task<List<Models.Contact>> GetContactsAsync(int userid)
         {
-            var sql = "select a.id userid from beat_user.Contact a where a.id=@UserId ";
-            var contacts=  await  conn.QueryAsync<Models.Contact>(sql, new { UserId = userid });
-            return contacts.ToList();
+            var sql = "select a.contactid userid, b.Name name, b.Company,b.title,b.Avatar " +
+                "from beta_user.Contact a," +
+                "beta_user.Users b where a.userid = @UserId" +
+                " and b.id = a.contactId";
+            var contacts= await    conn.QueryAsync<Models.Contact>(sql, new { UserId = userid });
+            if (contacts != null)
+            {
+                return contacts.ToList();
+            }
+            return new List<Models.Contact>();
         }
 
         /// <summary>

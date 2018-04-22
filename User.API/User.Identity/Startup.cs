@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DnsClient;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Resilience;
+using User.Identity.Authentication;
 using User.Identity.Dtos;
 using User.Identity.Infrastructure;
 using User.Identity.Service;
@@ -35,6 +37,8 @@ namespace User.Identity
                  .AddInMemoryClients(Config.GetClients())
                  .AddInMemoryIdentityResources(Config.GetIdentityResource())
                  .AddInMemoryApiResources(Config.GetApiResource());
+
+            services.AddTransient<IProfileService, ProfileService>();
             services.AddScoped<IAuthCodeService, TestAuthCodeService>()
                 .AddScoped<IUserServices, UserService>();
             services.AddSingleton(new System.Net.Http.HttpClient());

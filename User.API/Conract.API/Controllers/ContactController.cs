@@ -28,7 +28,8 @@ namespace Contact.API.Controllers
         [Route("")]
         public async Task<IActionResult> Get()
         {
-            return Ok(  await contaclRepository.GetContactsAsync(UserIdentity.UserId));
+            var result = await contaclRepository.GetContactsAsync(UserIdentity.UserId);
+            return Ok( result);
         }
         [HttpPut]
         [Route("add-tags")]

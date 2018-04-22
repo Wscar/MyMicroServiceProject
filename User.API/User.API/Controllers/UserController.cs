@@ -79,7 +79,7 @@ namespace User.API.Controllers
                 //获取刚刚创建的user
               user=  userContext.Users.Where(x => x.Phone == phone).FirstOrDefault();
             }
-            return Ok(user.Id);
+            return Ok(new { user.Id,user.Name,user.Company,user.Title,user.Avatar});
         }
         [HttpGet]
         [Route("tags")]

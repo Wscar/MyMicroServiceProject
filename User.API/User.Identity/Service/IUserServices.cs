@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using User.Identity.Dtos;
 
 namespace User.Identity.Service
 {
@@ -12,6 +13,6 @@ namespace User.Identity.Service
         /// </summary>
         /// <param name="phone">电话号码</param>
         /// <returns>返回用户id</returns>
-        Task<int> CheckOrCreate(string phone);
+        Task<UserInfo> CheckOrCreate(string phone);
     }
 }
