@@ -48,7 +48,7 @@ namespace User.Identity.Authentication
                 new Claim("Name",userInfo.Name??string.Empty),
                 new Claim("Company",userInfo.Company),
                 new Claim("Title",userInfo.Title),
-                new Claim("Avatr",userInfo.Avatar)
+                new Claim("Avatar",userInfo.Avatar)
             };
          
             context.Result = new GrantValidationResult(userInfo.Id.ToString(), GrantType,claims );

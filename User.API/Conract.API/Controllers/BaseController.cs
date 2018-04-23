@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 using Contact.API.Dtos;
 namespace Contact.API.Controllers
 {
-    public class BaseController:Controller
+    public class BaseController : Controller
     {
-        protected UserIdentity UserIdentity => new UserIdentity() { UserId = 1 };
+        protected UserIdentity UserIdentity
+        {
+            get
+            {
+                var userIdentity = new UserIdentity();
+
+                userIdentity.UserId = Convert.ToInt32(User.Claims.FirstOrDefault(x => x.Type == "sub").Value);
+                userIdentity.Name = User.Claims.FirstOrDefault(x => x.Type == "Name").Value;
+                userIdentity.Company = User.Claims.FirstOrDefault(x => x.Type == "Company").Value;
+                userIdentity.Title = User.Claims.FirstOrDefault(x => x.Type == "Title").Value;
+                userIdentity.Avatar = User.Claims.FirstOrDefault(x => x.Type == "Avatar").Value;
+                return userIdentity;
+            }
+
+
+
+
+        }
     }
 }

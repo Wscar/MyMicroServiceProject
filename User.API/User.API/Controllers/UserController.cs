@@ -64,17 +64,14 @@ namespace User.API.Controllers
         {
             //验证手机号码的格式
 
-            if (phone != "123456789")
-            {
-                throw new HttpRequestException("不让你访问");
-            }
+            
             var user = await userContext.Users.SingleOrDefaultAsync(x => x.Phone == phone);
             //如果不存在用户，就创建一个用户
             if(user==null)
             {
-                user = new Models.APPUser { Phone = phone ,CityId=1,Gender=1};
-                Models.APPUser newAppUser = new Models.APPUser();
-                EntityEntry < Models.APPUser > entry  =   userContext.Users.Add(user);
+                user = new APPUser { Phone = phone ,CityId=1,Gender=1};
+                APPUser newAppUser = new APPUser();
+                EntityEntry <APPUser> entry  =   userContext.Users.Add(user);
                 userContext.SaveChanges();
                 //获取刚刚创建的user
               user=  userContext.Users.Where(x => x.Phone == phone).FirstOrDefault();

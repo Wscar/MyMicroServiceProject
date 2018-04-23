@@ -26,6 +26,7 @@ namespace User.Identity
                 AllowedScopes = new List<string>  {
                     "gateway_api",
                      "user_api",
+                     "contact_api",
                     IdentityServer4.IdentityServerConstants.StandardScopes.Profile,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OfflineAccess
@@ -44,6 +45,7 @@ namespace User.Identity
                 AlwaysIncludeUserClaimsInIdToken = true,
                 AllowedScopes = new List<string>  {
                     "gateway_api",
+                    "contact_api",
                     IdentityServer4.IdentityServerConstants.StandardScopes.Profile,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OfflineAccess
@@ -59,7 +61,9 @@ namespace User.Identity
             {
                 new ApiResource("gateway_api","gateway service"),
 
-                new ApiResource("user_api","user_api service")
+                new ApiResource("user_api","user_api service"),
+                //并且要把contactapi加入到apiResource,并加入到 client的allowedScopes中 
+                new ApiResource("contact_api","contact_api service")
             };
         }
         public static List<TestUser> GetTestUser()

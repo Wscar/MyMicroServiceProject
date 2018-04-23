@@ -17,7 +17,7 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/connect/token",
+      "DownstreamPathTemplate": "/connect/{catchAll}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -25,8 +25,21 @@
           "Port": 56647
         }
       ],
-      "UpstreamPathTemplate": "/connect/token",
+      "UpstreamPathTemplate": "/connect/{catchAll}",
       "UpstreamHttpMethod": [ "Post" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/.well-known/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 56647
+        }
+      ],
+      "UpstreamPathTemplate": "/.well-known/{catchAll}",
+      "UpstreamHttpMethod": [ "Get" ]
 
     },
     {
@@ -39,7 +52,11 @@
         }
       ],
       "UpstreamPathTemplate": "/contact",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "finbook",
+        "AllowedScopes": ["contact_api"]
+      }
 
     },
     {

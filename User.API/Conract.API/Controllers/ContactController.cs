@@ -28,7 +28,8 @@ namespace Contact.API.Controllers
         [Route("")]
         public async Task<IActionResult> Get()
         {
-            var result = await contaclRepository.GetContactsAsync(UserIdentity.UserId);
+            var user = UserIdentity;
+            var result = await contaclRepository.GetContactsAsync(user.UserId);
             return Ok( result);
         }
         [HttpPut]
@@ -76,7 +77,7 @@ namespace Contact.API.Controllers
                 Name = baseUserInfo.Name,
                 Company = baseUserInfo.Company,
                 Avatar = baseUserInfo.Avatar,
-                 ApplyTime = DateTime.Now,
+                ApplyTime = DateTime.Now,
                 Ttile = baseUserInfo.Title
             },cancellationToken);
             if(!result)

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Contact.API.Data;
 using Contact.API.Service;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Contact.API
 {
@@ -29,6 +31,16 @@ namespace Contact.API
             services.AddScoped<IContactApplyRequestRespository, MysqlContactApplyRequestRepository>();
             services.AddScoped<IContaclRepository, MysqlContactRepository>();
             services.AddScoped<IUserService, UserService>();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            //添加认证服务
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.Audience = "contact_api";
+                    options.Authority = "http://localhost";
+                });
+                
             services.AddMvc();
         }
 
@@ -39,7 +51,7 @@ namespace Contact.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

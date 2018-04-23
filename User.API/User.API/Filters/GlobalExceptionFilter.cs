@@ -18,7 +18,7 @@ namespace User.API.Filters
         private readonly IHostingEnvironment env;
         //添加日志组件
         private readonly ILogger<GlobalExceptionFilter> logger;
-        public GlobalExceptionFilter(IHostingEnvironment _env, ILogger<GlobalExceptionFilter> _logger)
+         public GlobalExceptionFilter(IHostingEnvironment _env, ILogger<GlobalExceptionFilter> _logger)
         {
             env = _env;
             logger = _logger;

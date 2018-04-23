@@ -29,8 +29,7 @@ namespace Gateway.API
             services.AddAuthentication()
                 .AddIdentityServerAuthentication(authenticationProviderKey,options=> {
                     options.Authority= "http://localhost:56647";
-                    options.ApiName = "gateway_api";
-                   
+                    options.ApiName = "gateway_api";                  
                     options.SupportedTokens = IdentityServer4.AccessTokenValidation.SupportedTokens.Both;
                     options.ApiSecret = "yemobai";
                     options.RequireHttpsMetadata = false;
