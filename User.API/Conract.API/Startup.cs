@@ -54,5 +54,6 @@ namespace Contact.API
             app.UseAuthentication();
             app.UseMvc();
         }
+       
     }
 }

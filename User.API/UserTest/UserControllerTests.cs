@@ -133,7 +133,8 @@ namespace UserTest
             userTags[0].Tag.Should().Be("大神");
 
         }
-        [Fact] async void Update_ReturnUserTags_WithExpectedParamerters()
+        [Fact]
+        public async void Update_ReturnUserTags_WithExpectedParamerters()
         {
             (UserController controller, UserContext context) = GetUserController();
             List<string> newUserTags = new List<string>() {"大神","WarFace" };

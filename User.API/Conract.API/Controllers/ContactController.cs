@@ -9,8 +9,11 @@ using Contact.API.Data;
 using Contact.API.Service;
 using System.Threading;
 using Contact.API.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+
 namespace Contact.API.Controllers
-{
+{   
+    [Authorize]
     [Produces("application/json")]
     [Route("api/Contact")]
     public class ContactController:BaseController
@@ -29,6 +32,7 @@ namespace Contact.API.Controllers
         public async Task<IActionResult> Get()
         {
             var user = UserIdentity;
+
             var result = await contaclRepository.GetContactsAsync(user.UserId);
             return Ok( result);
         }

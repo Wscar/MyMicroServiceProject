@@ -1,0 +1,22 @@
+﻿
+  {
+    "Logging": {
+      "IncludeScopes": false,
+      "Debug": {
+        "LogLevel": {
+          "Default": "Warning"
+        }
+      },
+      "Console": {
+        "LogLevel": {
+          "Default": "Warning"
+        }
+      }
+    },
+    "DBSetting": {
+      "MongonContactConnectionString": "mongodb://47.93.232.105:27017",
+      "MongoDbContactDatabase": "MicroServiceDemo_Contact",
+      "MySqlConnectionString": "server=47.93.232.105;uid=yemobai;pwd=Jolly1128@;database=beta_user;Charset=utf8;port=3306"
+    }
+  }
+

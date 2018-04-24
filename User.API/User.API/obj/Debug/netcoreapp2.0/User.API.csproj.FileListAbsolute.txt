@@ -15,10 +15,10 @@ F:\MyProject\MyMicroServiceProject\User.API\User.API\bin\Debug\netcoreapp2.0\Use
 F:\MyProject\MyMicroServiceProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.runtimeconfig.dev.json
 F:\MyProject\MyMicroServiceProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.dll
 F:\MyProject\MyMicroServiceProject\User.API\User.API\bin\Debug\netcoreapp2.0\User.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.csprojResolveAssemblyReference.cache
 F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.csproj.CoreCompileInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.AssemblyInfoInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.AssemblyInfo.cs
 F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.dll
 F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.pdb
-F:\MyProject\MyMicroServiceProject\User.API\User.API\obj\Debug\netcoreapp2.0\User.API.csprojResolveAssemblyReference.cache
