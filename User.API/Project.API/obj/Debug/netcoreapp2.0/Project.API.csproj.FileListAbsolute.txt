@@ -1,0 +1,14 @@
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.API.deps.json
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.API.runtimeconfig.json
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.API.runtimeconfig.dev.json
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.csprojResolveAssemblyReference.cache
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.csproj.CoreCompileInputs.cache
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.AssemblyInfoInputs.cache
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.AssemblyInfo.cs
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.Domain.dll
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\bin\Debug\netcoreapp2.0\Project.Domain.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Project.API\obj\Debug\netcoreapp2.0\Project.API.csproj.CopyComplete

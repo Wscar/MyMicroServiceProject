@@ -38,7 +38,7 @@ namespace UserTest
             var context = GetUserContext();
             var loggingMoq = new Moq.Mock<ILogger<UserController>>();
             var logger = loggingMoq.Object;
-            var controller = new User.API.Controllers.UserController(context, logger);
+            var controller = new User.API.Controllers.UserController(context, logger,null);
             return (controller: controller,context:context);
         }
         [Fact]

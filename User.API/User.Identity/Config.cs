@@ -46,6 +46,7 @@ namespace User.Identity
                 AllowedScopes = new List<string>  {
                     "gateway_api",
                     "contact_api",
+                    "user_api",
                     IdentityServer4.IdentityServerConstants.StandardScopes.Profile,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServer4.IdentityServerConstants.StandardScopes.OfflineAccess

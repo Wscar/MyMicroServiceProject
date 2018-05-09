@@ -13,6 +13,7 @@ namespace User.API.Filters
     /// <summary>
     /// 全局过滤器
     /// </summary>
+
     public class GlobalExceptionFilter : IExceptionFilter
     {
         private readonly IHostingEnvironment env;
@@ -23,6 +24,9 @@ namespace User.API.Filters
             env = _env;
             logger = _logger;
         }
+
+        
+
         public void OnException(ExceptionContext context)
         {
           if(context.Exception.GetType()== typeof(UserOperationException))

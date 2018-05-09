@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Contact.API.Models;
 namespace Contact.API.Data
 {
-   public  interface IContaclRepository
+   public  interface IContactRepository
     {   
         /// <summary>
         /// 更新用户好友信息

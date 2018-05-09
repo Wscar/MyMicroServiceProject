@@ -8,7 +8,7 @@ using Contact.API.Models;
 using MongoDB.Driver;
 namespace Contact.API.Data
 {
-    public class MongoContactRepository : IContaclRepository
+    public class MongoContactRepository : IContactRepository
     {
         private readonly ContactContext contactContext;
         public MongoContactRepository(ContactContext _contactContext)

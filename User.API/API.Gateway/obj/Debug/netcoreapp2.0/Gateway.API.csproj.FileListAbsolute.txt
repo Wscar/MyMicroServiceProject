@@ -14,6 +14,7 @@ F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\
 F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\Gateway.API.runtimeconfig.dev.json
 F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\Gateway.API.dll
 F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\bin\Debug\netcoreapp2.0\Gateway.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\Gateway.API.csprojResolveAssemblyReference.cache
 F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\Gateway.API.csproj.CoreCompileInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\Gateway.API.AssemblyInfoInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\API.Gateway\obj\Debug\netcoreapp2.0\Gateway.API.AssemblyInfo.cs

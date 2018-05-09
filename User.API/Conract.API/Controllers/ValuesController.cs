@@ -23,12 +23,15 @@ namespace Contact.API.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+          
             return new string[] { "value1", "value2" };
+          
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        [Route("get-userInfo")]
+        // [HttpGet("{id}")]
+        [HttpGet]
+        [Route("get-userInfo/{id}")]
         public async  Task<IActionResult> GetUserInfo(int id)
         {
             var result=await userService.GetBaseUserInfoAsync(id);

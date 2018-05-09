@@ -17,13 +17,13 @@
       }
     },
     "Conract.API": {
+      "applicationUrl": "http://localhost:62077/",
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:62077/"
+      "launchBrowser": true,
+      "launchUrl": "api/values"
     }
   }
 }

@@ -11,10 +11,10 @@ namespace Contact.API.Service
 {
     public class UserService : IUserService
     {
-        private readonly MySqlConnection conn;
+        private readonly MySql.Data.MySqlClient.MySqlConnection conn;
         public UserService(IOptions<AppSetting> options)
         {
-            conn = new MySqlConnection(options.Value.MySqlConnectionString);
+            conn = new MySql.Data.MySqlClient.MySqlConnection(options.Value.MySqlConnectionString);
         }
         public async Task<BaseUserInfo> GetBaseUserInfoAsync(int userId)
         {

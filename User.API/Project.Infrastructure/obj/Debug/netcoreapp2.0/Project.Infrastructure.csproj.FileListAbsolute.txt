@@ -1,0 +1,12 @@
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\bin\Debug\netcoreapp2.0\Project.Infrastructure.deps.json
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\bin\Debug\netcoreapp2.0\Project.Infrastructure.dll
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.csprojResolveAssemblyReference.cache
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.csproj.CoreCompileInputs.cache
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.AssemblyInfoInputs.cache
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.AssemblyInfo.cs
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\bin\Debug\netcoreapp2.0\Project.Domain.dll
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\bin\Debug\netcoreapp2.0\Project.Infrastructure.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\bin\Debug\netcoreapp2.0\Project.Domain.pdb
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.csproj.CopyComplete
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.dll
+F:\MyProject\MyMicroServiceProject\User.API\Project.Infrastructure\obj\Debug\netcoreapp2.0\Project.Infrastructure.pdb

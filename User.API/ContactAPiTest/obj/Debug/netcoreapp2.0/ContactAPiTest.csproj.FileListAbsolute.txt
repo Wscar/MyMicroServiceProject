@@ -8,7 +8,17 @@ F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\ContactAPiTest.dll
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\ContactAPiTest.pdb
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\Contact.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\Gateway.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\Resilience.dll
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\User.API.dll
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\User.Identity.dll
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\WebHostBuilderTest.dll
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\Contact.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\WebHostBuilderTest.pdb
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\Resilience.pdb
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\Gateway.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\User.API.pdb
+F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\bin\Debug\netcoreapp2.0\User.Identity.pdb
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\obj\Debug\netcoreapp2.0\ContactAPiTest.csprojResolveAssemblyReference.cache
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\obj\Debug\netcoreapp2.0\ContactAPiTest.csproj.CoreCompileInputs.cache
 F:\MyProject\MyMicroServiceProject\User.API\ContactAPiTest\obj\Debug\netcoreapp2.0\ContactAPiTest.AssemblyInfoInputs.cache

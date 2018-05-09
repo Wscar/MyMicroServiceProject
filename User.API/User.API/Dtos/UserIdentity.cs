@@ -21,5 +21,7 @@ namespace User.API.Dtos
         /// 头像
         /// </summary>
         public string Avatar { get; set; }
+        public string Company { get; set; }
+        public string Title { get; set; }
     }
 }

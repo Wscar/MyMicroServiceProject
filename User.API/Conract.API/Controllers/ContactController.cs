@@ -19,14 +19,17 @@ namespace Contact.API.Controllers
     public class ContactController:BaseController
     {
         private readonly IContactApplyRequestRespository requestRespository;
-        private readonly IContaclRepository contaclRepository;
+        private readonly IContactRepository contaclRepository;
         private readonly IUserService userService;
-        public ContactController(IContactApplyRequestRespository _requestRespository, IUserService _userService, IContaclRepository _contaclRepository)
+       
+
+        public ContactController(IContactApplyRequestRespository _requestRespository, IUserService _userService, IContactRepository _contaclRepository)
         {
             requestRespository = _requestRespository;
             userService = _userService;
             contaclRepository = _contaclRepository;
         }
+       
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> Get()
@@ -62,11 +65,14 @@ namespace Contact.API.Controllers
             return Ok(request);
         }
         /// <summary>
-        /// 添加好友请求
+        /// 添加好友申请
         /// </summary>
+        /// <param name="userId">用户ID</param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("add-request")]      
+        [Route("add-request")]  
+       
         public async Task<IActionResult> AddApplyRequset(int userId, CancellationToken cancellationToken)
         {
             var baseUserInfo = await userService.GetBaseUserInfoAsync(userId);
@@ -91,20 +97,24 @@ namespace Contact.API.Controllers
             return Ok();
         }
         /// <summary>
-        /// 通过好友请求
+        /// 通过好友申请
         /// </summary>
+        /// <param name="applierId"></param>
+        /// <param name="isApproval"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         [HttpPut]
-        [Route("approval-request")]
-        public async Task<IActionResult> AppApprovalRequset( int applierId, CancellationToken cancellationToken)
+        [Route("approval-request/{applierId}")]
+        public async Task<IActionResult> AppApprovalRequset( int applierId, string isApproval, CancellationToken cancellationToken)
         {
-            var result =await requestRespository.ApprovalAsync(UserIdentity.UserId,applierId,cancellationToken);
+            var result =await requestRespository.ApprovalAsync(UserIdentity.UserId,applierId,isApproval ,cancellationToken);
             if (result)
-            {
+            {    
+                //获取申请者的用户信息。
                 var applier = await this.userService.GetBaseUserInfoAsync(applierId);
                 var userInfo = await this.userService.GetBaseUserInfoAsync(UserIdentity.UserId);
                 await this.contaclRepository.AddContactAsync(UserIdentity.UserId, userInfo, cancellationToken);
-                await this.contaclRepository.AddContactAsync(applierId, applier, cancellationToken);               
+                        
                 return Ok();
             }
             //记录日志

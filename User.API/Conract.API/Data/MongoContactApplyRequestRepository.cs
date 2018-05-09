@@ -40,7 +40,7 @@ namespace Contact.API.Data
         /// </summary>
         /// <param name="applierId">申请人Id</param>
         /// <returns></returns>
-        public async Task<bool> ApprovalAsync(int userId, int applierId, CancellationToken cancellationToken)
+        public async Task<bool> ApprovalAsync(int userId, int applierId, string isApproval, CancellationToken cancellationToken)
         {
             var filter = Builders<ContactApllyRequest>.Filter.Where(x => x.UserId == userId && x.Applierid == applierId);
             var updateFilter = Builders<ContactApllyRequest>.Update.Set(x => x.Approval, "1")
@@ -49,6 +49,9 @@ namespace Contact.API.Data
             var result = await contactContext.ContactApplyRequests.UpdateOneAsync(filter, updateFilter, null, cancellationToken);
             return result.MatchedCount == result.ModifiedCount && result.ModifiedCount == 1;
         }
+
+        
+
         /// <summary>
         /// 获取好友申请列表
         /// </summary>

@@ -15,6 +15,9 @@ using User.API.Filters;
 using User.API.Entities;
 using Microsoft.Extensions.Options;
 using Consul;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 namespace User.API
 {
     public class Startup
@@ -33,6 +36,17 @@ namespace User.API
             {
                 optinos.UseMySQL(Configuration.GetConnectionString("Mysql"));
             });
+            //添加jwt认证
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.Audience = "user_api";
+                    options.Authority = "http://localhost";
+                    options.SaveToken = true;
+                   
+                });
             //获取配置文件
             services.Configure<ServiceDiscoveryOptions>(Configuration.GetSection("ServiceDiscovery"));
             //注册IConsulClient
@@ -44,10 +58,33 @@ namespace User.API
                     consul.Address = new Uri(serviceConfigation.Consul.HttpEndpoint);
                 }
             }));
+            //使用CAP
+            services.AddCap(options =>
+            {
+                options.UseEntityFramework<UserContext>()
+                .UseDashboard().UseDiscovery(x=> {
+                    x.DiscoveryServerHostName = "localhost";
+                    x.DiscoveryServerPort = 8500;
+                    x.CurrentNodeHostName = "localhost";
+                    x.CurrentNodePort = 5000;
+                    x.NodeId = 1;
+                    x.NodeName = "CAP No1 Node";
+
+
+                }).UseRabbitMQ(mqOptions=> {
+                    mqOptions.HostName = "47.93.232.105";
+                    mqOptions.Port = 5672;
+                    mqOptions.UserName = "admin";
+                    mqOptions.Password = "wqawd520";
+
+                });
+                
+            });
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(GlobalExceptionFilter));
             });
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,8 +100,10 @@ namespace User.API
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseAuthentication();
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            app.UseCap();
             app.UseStaticFiles();
             //启动的时候注册服务
             app.UseMvc(routes =>

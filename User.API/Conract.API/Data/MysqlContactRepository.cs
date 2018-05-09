@@ -8,16 +8,17 @@ using Contact.API.Models;
 using Dapper;
 using Microsoft.Extensions.Options;
 using MySql.Data.MySqlClient;
+using MySqlConnector;
 namespace Contact.API.Data
 {
-    public class MysqlContactRepository : IContaclRepository
+    public class MysqlContactRepository : IContactRepository
     {
 
         private readonly MySqlConnection conn;
-
+        
         public MysqlContactRepository(IOptions<AppSetting> options)
         {
-            conn = new MySqlConnection(options.Value.MySqlConnectionString);
+            conn = new MySql.Data.MySqlClient.MySqlConnection(options.Value.MySqlConnectionString);
         }
         /// <summary>
         /// 添加用户好友信息
@@ -28,9 +29,11 @@ namespace Contact.API.Data
         /// <returns></returns>
         public async Task<bool> AddContactAsync(int userId, BaseUserInfo baseUserInfo, CancellationToken token)
         {
-            var sql = "intser into Contact values(@UserId,@ContactId,@Each)";
-            var result= await  conn.ExecuteAsync(sql, new { UserId = userId, ContactId = baseUserInfo.UserId });
-            return result > 0;
+            var sql = "insert into Contact(userid,Contactid,`each`) values(@UserId,@ContactId,@Each)";
+            var result= await  conn.ExecuteAsync(sql, new { UserId = userId, ContactId = baseUserInfo.UserId,Each="1" });
+            var sql2= "insert into Contact(userid,Contactid,`each`) values(@ContactId,@UserId,@Each)";
+            var result2 = await conn.ExecuteAsync(sql2, new { UserId = userId, ContactId = baseUserInfo.UserId, Each = "1" });
+            return result== result2;
         }
 
         /// <summary>
@@ -61,7 +64,7 @@ namespace Contact.API.Data
         /// <returns></returns>
         public async Task<bool> TagsContactAsync(int userId, int contactId, List<string> tags)
         {
-            var sql = "update beta.Contact  set tasg=@Tags where userId=@UserId and contactId=@ContactId";
+            var sql = "update  beta_user.Contact  set tags=@Tags where userId=@UserId and contactId=@ContactId";
             var contactTags = "";
             tags.ForEach((x) =>
             {
@@ -77,9 +80,11 @@ namespace Contact.API.Data
         /// <param name="baseUserInfo"></param>
         /// <param name="token"></param>
         /// <returns></returns>
-        public Task<bool> UpdateContactInfoAsync(BaseUserInfo baseUserInfo, CancellationToken token)
+        public async Task<bool> UpdateContactInfoAsync(BaseUserInfo baseUserInfo, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var sql = "update beta_user.Users a set  a.Title=@Title where a.Id=@Id";
+           var result= await  conn.ExecuteAsync(sql, new { Title ="来自消息" +baseUserInfo.Title, Id = baseUserInfo.UserId });
+            return result > 0;
         }
     }
 }
