@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Project.Domain.AggregatesModel;
 using MediatR;
 using Microsoft.EntityFrameworkCore.Design;
-
+using Project.Infrastructure.EntityConfiguration;
 namespace Project.Infrastructure
 {
     public class ProjectContext : DbContext, IUnitOfWork
@@ -35,19 +35,18 @@ namespace Project.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new ClientRequestEntityTypeConfiguration());
-            //modelBuilder.ApplyConfiguration(new PaymentMethodEntityTypeConfiguration());
-            //modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
-            //modelBuilder.ApplyConfiguration(new OrderItemEntityTypeConfiguration());
-            //modelBuilder.ApplyConfiguration(new CardTypeEntityTypeConfiguration());
-            //modelBuilder.ApplyConfiguration(new OrderStatusEntityTypeConfiguration());
-            //modelBuilder.ApplyConfiguration(new BuyerEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectViewEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectVisibleEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectContributorEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectPropertyEntityConfiguation());
         }
 
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             await _mediator.DispatchDomainEventsAsync(this);
+            await base.SaveChangesAsync();
             return true;
         }
     }

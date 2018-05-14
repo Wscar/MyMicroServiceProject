@@ -23,7 +23,7 @@ namespace Project.API.Applications.Commands
                 throw new Domain.Exceptions.ProjectDomainException($"project not found:{request.ProjectContributor.ProjectId}");
             }
             project.AddContributor(request.ProjectContributor);
-            await projectRepository.UnitOfWork.SaveChangesAsync();
+            await projectRepository.UnitOfWork.SaveEntitiesAsync();
         }
     }
 }

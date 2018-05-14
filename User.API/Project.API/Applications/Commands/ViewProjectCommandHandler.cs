@@ -22,7 +22,7 @@ namespace Project.API.Applications.Commands
                 throw new Domain.Exceptions.ProjectDomainException($"project not found:{request.ProjectId}");
             }
             project.AddViewer(request.UserId, request.UserName, request.Avatar);
-            await projectRepository.UnitOfWork.SaveChangesAsync();
+            await projectRepository.UnitOfWork.SaveEntitiesAsync();
         }
     }
 }

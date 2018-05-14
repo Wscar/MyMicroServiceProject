@@ -10,7 +10,7 @@ namespace Project.Domain.AggregatesModel
         public int ProjectId { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
-        public string Avatr { get; set; }
+        public string Avatar { get; set; }
         public DateTime CreateTime { get; set; }
         public bool IsColser { get; set; }
 
